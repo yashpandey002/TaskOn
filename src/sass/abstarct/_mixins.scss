@@ -1,0 +1,8 @@
+@mixin flex-space-btw-center {
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin cursor-pointer {
+    cursor: pointer;
+}

@@ -1,0 +1,31 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+}
+
+*:focus {
+    outline: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: Roboto, Fallback, sans-serif;
+    font-weight: 400;
+    background-color: var(--background-grey);
+}
+
+input {
+    border: none;
+}

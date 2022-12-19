@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TaskOn - Add your today's tasks</title>
+        <link rel="stylesheet" href="./src/sass/styles.css" type="text/css" />
+        <script src="src/app/app.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-nav flex">
+                <div class="header-nav__logo-box flex">
+                    <div class="header-nav__logo-box__menu-icon-box">
+                        <img
+                            src="./assets/img/menu-outline.svg"
+                            alt="Hamburger menu icon"
+                            class="header-nav__logo-box__menu-icon"
+                        />
+                    </div>
+                    <div class="header-nav__logo-box__logo-box">
+                        <img
+                            src="./assets/img/TaskOn-logo.png"
+                            alt="Taskon logo"
+                            class="header-nav__logo-box__taskon-logo"
+                        />
+                    </div>
+                </div>
+                <div class="header-nav__search-box flex">
+                    <div class="header-nav__search-box__input-box flex">
+                        <img
+                            src="./assets/img/search-outline.svg"
+                            alt="Search icon"
+                            class="header-nav__search-box__search-icon"
+                        />
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            class="header-nav__search-box__input"
+                        />
+                    </div>
+                </div>
+                <div class="header-nav__profile-box flex">
+                    <div class="header-nav__profile-box__dark-mode-box">
+                        <div
+                            class="header-nav__profile-box__dark-mode-box__icon-box"
+                        >
+                            <img
+                                src="./assets/img/sunny-outline.svg"
+                                alt="Sun icon showing light mode"
+                                title="Light mode"
+                                class="header-nav__profile-box__dark-mode-box__icon"
+                            />
+                        </div>
+                    </div>
+                    <div class="header-nav__profile-box__view-box">
+                        <img
+                            src="./assets/img/vertical-view.svg"
+                            alt="Vertical view icon"
+                            class="header-nav__profile-box__view-icon"
+                            title="Vertical view"
+                        />
+                    </div>
+                    <div class="header-nav__profile-box__profile-photo-box">
+                        <img
+                            src="./assets/img/user-profile.jpg"
+                            alt="Current user profile photo"
+                            class="header-nav__profile-box__profile-photo"
+                        />
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="board">
+                    <div class="board__name">Main board</div>
+                    <div class="list">
+                        <div class="list__header flex">
+                            <div class="list__header__name-box">
+                                <div class="list__name">
+                                    Freelancing roadmap
+                                </div>
+                                <input
+                                    type="text"
+                                    class="list__name__input hide"
+                                />
+                            </div>
+                            <div class="list__header__settings-icon-box">
+                                <img
+                                    src="./assets/img/ellipsis-vertical.svg"
+                                    alt="Three vertical dots"
+                                    class="list__header__settings-icon"
+                                />
+                            </div>
+                        </div>
+                        <div class="list__add-task flex">
+                            <input
+                                type="text"
+                                class="list__add-task__input hide"
+                                placeholder="New task"
+                            />
+                            <div class="list__add-task__icon-box">
+                                <div class="list__add-task__icon"></div>
+                            </div>
+                            <div class="list__add-task__text-box">
+                                <div class="list__add-task__text">
+                                    Add a task
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list__tasks">
+                            <ul class="list__tasks__items-container flex">
+                                <li class="list__tasks__item flex">
+                                    <div
+                                        class="list__tasks__indicator-icon-box flex"
+                                    >
+                                        <div
+                                            class="list__tasks__indicator-icon"
+                                        ></div>
+                                    </div>
+                                    <div class="list__tasks__name">
+                                        Complete javascripts basics
+                                    </div>
+                                    <div
+                                        class="list__tasks__edit-task-icon-box hide"
+                                    ></div>
+                                </li>
+                                <li class="list__tasks__item flex">
+                                    <div
+                                        class="list__tasks__indicator-icon-box flex"
+                                    >
+                                        <div
+                                            class="list__tasks__indicator-icon"
+                                        ></div>
+                                    </div>
+                                    <div class="list__tasks__name">
+                                        Complete javascripts basics
+                                    </div>
+                                    <div
+                                        class="list__tasks__edit-task-icon-box hide"
+                                    ></div>
+                                </li>
+                                <li class="list__tasks__item flex">
+                                    <div
+                                        class="list__tasks__indicator-icon-box flex"
+                                    >
+                                        <div
+                                            class="list__tasks__indicator-icon"
+                                        ></div>
+                                    </div>
+                                    <div class="list__tasks__name">
+                                        Complete javascripts basics
+                                    </div>
+                                    <div
+                                        class="list__tasks__edit-task-icon-box hide"
+                                    ></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list__task-done">
+                            <div class="list__task-done__header flex">
+                                <div class="list__task-done__heading">
+                                    Completed
+                                </div>
+                                <div class="list__task-done__dropdown-icon-box">
+                                    <img
+                                        src="./assets/img/down-arrow.svg"
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+                            <ul class="list__task-done__items-container flex">
+                                <li class="list__tasks__item flex">
+                                    <div
+                                        class="list__tasks__indicator-icon-box flex"
+                                    >
+                                        <div
+                                            class="list__tasks__indicator-icon"
+                                        ></div>
+                                    </div>
+                                    <div class="list__tasks__name">
+                                        Complete javascripts basics
+                                    </div>
+                                    <div
+                                        class="list__tasks__edit-task-icon-box hide"
+                                    ></div>
+                                </li>
+                                <li class="list__tasks__item flex">
+                                    <div
+                                        class="list__tasks__indicator-icon-box flex"
+                                    >
+                                        <div
+                                            class="list__tasks__indicator-icon"
+                                        ></div>
+                                    </div>
+                                    <div class="list__tasks__name">
+                                        Complete javascripts basics
+                                    </div>
+                                    <div
+                                        class="list__tasks__edit-task-icon-box hide"
+                                    ></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list__settings flex">
+                            <div class="list__settings__item list__rename flex">
+                                <div class="list__settings__item__icon-box">
+                                    <img
+                                        src="./assets/img/pencil-outline.svg"
+                                        alt="icon of pencil showing edit"
+                                        class="list__settings__item-icon"
+                                    />
+                                </div>
+                                <div
+                                    class="list__settings__item__text-box"
+                                ></div>
+                                <div class="list__settings__item-text">
+                                    Rename list name
+                                </div>
+                            </div>
+                            <div class="list__settings__item list__rename flex">
+                                <div class="list__settings__item__icon-box">
+                                    <img
+                                        src="./assets/img/color-palette-outline.svg"
+                                        alt="icon of pencil showing edit"
+                                        class="list__settings__item-icon"
+                                    />
+                                </div>
+                                <div
+                                    class="list__settings__item__text-box"
+                                ></div>
+                                <div class="list__settings__item-text">
+                                    Set color
+                                </div>
+                            </div>
+                            <div class="list__settings__item list__rename flex">
+                                <div class="list__settings__item__icon-box">
+                                    <img
+                                        src="./assets/img/duplicate-outline.svg"
+                                        alt="icon of pencil showing edit"
+                                        class="list__settings__item-icon"
+                                    />
+                                </div>
+                                <div
+                                    class="list__settings__item__text-box"
+                                ></div>
+                                <div class="list__settings__item-text">
+                                    Duplicate list
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-menu hide">
+                    <div class="side-menu__bg"></div>
+                    <div class="side-menu__content-box">
+                        <div class="side-menu__content-box__logo-box flex">
+                            <img
+                                class="side-menu__content-box__logo"
+                                src="./assets/img/TaskOn-logo.png"
+                            />
+                        </div>
+                        <div class="side-menu__content-box__board-box">
+                            <div
+                                class="side-menu__content-box__board-item flex"
+                            >
+                                <div
+                                    class="side-menu__content-box__board-icon-box"
+                                >
+                                    <img
+                                        src="./assets/img/board-icon.svg"
+                                        class="side-menu__content-box__board-icon"
+                                    />
+                                </div>
+                                <div
+                                    class="side-menu__content-box__board-name-box"
+                                >
+                                    <div
+                                        class="side-menu__content-box__board-name"
+                                    >
+                                        Main Board
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="side-menu__content-box__new-board-box">
+                            <div
+                                class="side-menu__content-box__board-item flex"
+                            >
+                                <div
+                                    class="side-menu__content-box__new-board-icon-box"
+                                >
+                                    <img
+                                        src="./assets/img/add-board.svg"
+                                        class="side-menu__content-box__new-board-icon"
+                                    />
+                                </div>
+                                <div
+                                    class="side-menu__content-box__new-board-text-box"
+                                >
+                                    <div
+                                        class="side-menu__content-box__new-board-text"
+                                    >
+                                        Main Board
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+.header-nav {
+    height: 6rem;
+    justify-content: space-between;
+    padding: 0 2rem;
+    background-color: var(--white);
+    box-shadow: rgb(169 174 183 / 50%) 0px 1px 2px 0px;
+
+    &__logo-box {
+        gap: 2rem;
+        @include flex-space-btw-center;
+
+        &__menu-icon-box {
+            padding: 5px;
+            border-radius: 50%;
+            background-color: transparent;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: var(--lightest-grey);
+            }
+        }
+
+        &__menu-icon {
+            height: 3.2rem;
+            @include cursor-pointer;
+        }
+
+        &__taskon-logo {
+            height: 2.8rem;
+            @include cursor-pointer;
+        }
+    }
+
+    &__search-box {
+        @include flex-space-btw-center;
+
+        &__input-box {
+            padding: 1rem 2rem;
+            gap: 1rem;
+            background-color: var(--blueish-grey);
+            border-radius: 10px;
+        }
+
+        &__search-icon {
+            height: 2rem;
+            @include cursor-pointer;
+        }
+
+        &__input {
+            border: none;
+            background-color: var(--blueish-grey);
+            width: 50rem;
+
+            &::placeholder {
+                font-size: 1.6rem;
+                letter-spacing: 0.5px;
+                color: var(--light-grey);
+            }
+        }
+    }
+
+    &__profile-box {
+        @include flex-space-btw-center;
+        gap: 2.4rem;
+
+        &__dark-mode-box {
+            &__icon-box {
+                border: 1px solid rgb(196, 196, 196);
+                padding: 2px 3px;
+                border-radius: 3px;
+                @include cursor-pointer;
+            }
+
+            &__icon {
+                height: 2.6rem;
+            }
+        }
+
+        &__view-icon {
+            height: 1.8rem;
+            @include cursor-pointer;
+        }
+
+        &__profile-photo {
+            height: 4rem;
+            width: 4rem;
+            padding: 2px;
+            border-radius: 50%;
+            margin-left: 5rem;
+            background-color: transparent;
+            transition: background-color 0.3s;
+            @include cursor-pointer;
+
+            &:hover {
+                background-color: var(--light-grey);
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+.board {
+    position: relative;
+
+    &__name {
+        font-size: var(--size-large);
+        color: var(--text-color-secondary-2);
+        margin-bottom: 1.6rem;
+    }
+}
