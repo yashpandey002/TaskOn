@@ -1,156 +1,54 @@
 'use strict';
-import './settings.js';
-console.log('Importing module');
 
-////////////////////////
-// Showing or hiding settings when clicked on icon
-////////////////////////
-// const settingsIcon = document.querySelector('.list__settings__icon');
-// const listSettings = document.querySelector('.list__settings');
+// Show sidebar
+const sideMenuIcon = document.querySelector('.header-nav__logo-box__menu-icon');
 
-// // const showOrHideSettings = function () {
-// //     listSettings.classList.toggle('show-settings');
-// // };
+document.addEventListener('click', (e) => {
+    const sideMenu = document.querySelector('.side-menu');
+    const sideMenuBg = document.querySelector('.side-menu__bg');
+    if (e.target == sideMenuIcon) {
+        sideMenu.classList.remove('hide');
+    } else if (e.target == sideMenuBg) {
+        sideMenu.classList.add('hide');
+    }
+});
 
-// // const hideSettings = function () {
-// //     listSettings.classList.remove('show-settings');
-// // };
+// Verical/Horizontal view
+const viewIcon = document.querySelector('.header-nav__profile-box__view-icon');
 
-// document.addEventListener('click', function (event) {
-//     if (
-//         event.target.closest('.list__settings') ||
-//         event.target === '.list__settings'
-//     ) {
-//         // showOrHideSettings();
-//         listSettings.classList.add('show-settings');
-//     } else {
-//         // hideSettings();
-//         listSettings.classList.remove('show-settings');
-//     }
-// });
+viewIcon.addEventListener('click', () => {
+    const board = document.querySelector('.board');
+    board.classList.toggle('flex');
+    board.classList.toggle('board--vertical');
 
-// ////////////////////////
-// // Renaming a list
-// ////////////////////////
-// const listRenameBtn = document.querySelector('.list__rename');
-// const listName = document.querySelector('.list__name');
-// const listNameInputElement = document.querySelector('.list__name__input');
+    const boardName = document.querySelector('.board__name');
+    boardName.classList.toggle('board__name--vertical');
 
-// const editListName = function () {
-//     listNameInputElement.value = listName.textContent;
-//     listName.style.display = 'none';
-//     listNameInputElement.style.display = 'block';
-//     listNameInputElement.select();
+    const list = document.querySelector('.list');
+    list.classList.toggle('list--vertical');
+});
 
-//     const hideListNameInput = function () {
-//         listName.textContent = listNameInputElement.value;
-//         listNameInputElement.style.display = 'none';
-//         listName.style.display = 'block';
-//     };
+// Show settings
+const listSettingsIcon = document.querySelector(
+    '.list__header__settings-icon-box'
+);
 
-//     listNameInputElement.addEventListener('keydown', function (e) {
-//         if (e.key === 'Enter' || e.key === 'Escape') {
-//             hideListNameInput();
-//         }
-//     });
-// };
+const listSettings = document.querySelector('.list__settings');
 
-// listRenameBtn.addEventListener('click', () => {
-//     showOrHideSettings();
-//     editListName();
-// });
-// listName.addEventListener('dblclick', editListName);
+listSettingsIcon.addEventListener('click', () => {
+    listSettings.classList.toggle('show-settings');
+    console.log('hello world');
+});
 
-// ////////////////////////
-// // Add a task component
-// ////////////////////////
-// const addTaskBtn = document.querySelector('.list__add-task');
-// const addTaskText = document.querySelector('.list__add-task__text');
-// const addTaskIcon = document.querySelector('.list__add-task__icon');
-// const addTaskInput = document.querySelector('.list__add-task__input');
+// Rename list
+const listRenamebtn = document.querySelector('.list__rename');
 
-// const showTaskInput = function () {
-//     addTaskText.style.display = 'none';
-//     addTaskInput.placeholder = 'New task';
-//     addTaskInput.style.display = 'block';
-//     addTaskInput.focus();
-// };
+listRenamebtn.addEventListener('click', () => {
+    const listNameInputElement = document.querySelector('.list__name__input');
+    const listName = document.querySelector('.list__name');
 
-// const hideTaskInput = function () {
-//     addTaskText.style.display = 'block';
-//     addTaskInput.style.display = 'none';
-// };
-
-// const appendTask = function () {
-//     if (addTaskInput.value === '') {
-//         return;
-//     } else {
-//         const listTask = document.querySelector('.list__tasks');
-//         listTask.style.display = 'block';
-
-//         const taskContainer = document.querySelector(
-//             '.list__task__items-container'
-//         );
-
-//         const newTaskLi = document.createElement('li');
-//         newTaskLi.classList.add('list__task__item', 'flex');
-//         taskContainer.append(newTaskLi);
-
-//         const newTaskIconContainer = document.createElement('div');
-//         newTaskIconContainer.classList.add(
-//             'list__task__indicator-icon-box',
-//             'flex'
-//         );
-//         newTaskLi.append(newTaskIconContainer);
-//         const newTaskIcon = document.createElement('div');
-//         newTaskIcon.classList.add('list__task__indicator-icon');
-//         newTaskIconContainer.append(newTaskIcon);
-
-//         const newTaskName = document.createElement('div');
-//         newTaskName.classList.add('list__task__name');
-//         newTaskName.textContent = addTaskInput.value;
-//         newTaskLi.append(newTaskName);
-
-//         // Adding an event of taskDone to every icon and name of task
-//         taskDoneEvent(newTaskIcon, newTaskName, newTaskLi, taskContainer);
-
-//         const newTaskEditIconContainer = document.createElement('div');
-//         newTaskEditIconContainer.classList.add('list__edit-task-icon-box');
-//         newTaskLi.append(newTaskEditIconContainer);
-//         const newTaskEditIcon = document.createElement('img');
-//         newTaskEditIcon.src = './img/edit-task-icon.svg';
-//         newTaskEditIcon.classList.add('list__edit-task-icon');
-//         newTaskEditIconContainer.append(newTaskEditIcon);
-
-//         addTaskInput.value = '';
-//     }
-// };
-
-// const createNewTask = function () {
-//     showTaskInput();
-//     addTaskInput.addEventListener('keydown', function (e) {
-//         if (e.key === 'Enter' || e.key === 'Escape') {
-//             appendTask();
-//             hideTaskInput();
-//         }
-//     });
-// };
-// addTaskBtn.addEventListener('click', createNewTask);
-
-// ////////////////////////
-// // Task done component
-// ////////////////////////
-// function taskDoneEvent(icon, name, taskli, taskContainer) {
-//     icon.addEventListener('click', () => {
-//         name.classList.toggle('task-done__name');
-//         icon.classList.toggle('task-done__icon');
-
-//         const listTaskDone = document.querySelector('.list__task-done');
-//         listTaskDone.style.display = 'block';
-
-//         taskContainer.removeChild(taskli);
-//         listTaskDone.appendChild(taskli);
-//     });
-// }
-
-// const addToCompletedTask = function () {};
+    listNameInputElement.value = listName.textContent.trim();
+    listName.classList.add('hide');
+    listNameInputElement.classList.remove('hide');
+    listNameInputElement.select();
+});

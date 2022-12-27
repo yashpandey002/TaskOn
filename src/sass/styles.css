@@ -388,3 +388,28 @@ input {
   color: var(--text-color-secondary-2);
   margin-bottom: 1.6rem;
 }
+
+.show-settings {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.list--vertical {
+  max-width: 80rem;
+  width: 100%;
+}
+
+.board__name--vertical {
+  max-width: 80rem;
+  background-color: #fff;
+  padding: 1rem 1.6rem;
+  box-shadow: rgba(169, 174, 183, 0.5) 0px 1px 2px 0px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.board--vertical {
+  flex-direction: column;
+  align-items: center;
+}
