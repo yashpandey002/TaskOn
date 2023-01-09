@@ -5,6 +5,8 @@
     background-color: var(--white);
     box-shadow: rgb(169 174 183 / 50%) 0px 1px 2px 0px;
 
+    border-left: 1rem solid transparent;
+
     &__header {
         @include flex-space-btw-center;
         padding: 0 1.6rem;
@@ -83,6 +85,7 @@
 
         &__item {
             @include flex-space-btw-center;
+            @include cursor-pointer;
             padding: 8px 1.6rem;
             gap: 1rem;
 
@@ -102,7 +105,7 @@
             background-image: url(../../../assets/img/task-indicator.svg);
             background-size: cover;
             background-repeat: no-repeat;
-            @include cursor-pointer;
+            // @include cursor-pointer;
 
             &:hover {
                 background-image: url(../../../assets/img/checkmark.svg);
@@ -122,7 +125,6 @@
             background-image: url(../../../assets/img/edit-task-icon.svg);
             background-size: cover;
             background-repeat: no-repeat;
-            @include cursor-pointer;
         }
     }
 
@@ -195,7 +197,6 @@
             @include cursor-pointer;
             gap: 2px;
             align-items: center;
-            // transition: color 300ms;
 
             &-icon {
                 height: 1.6rem;
@@ -210,6 +211,43 @@
             &:hover .list__settings__item-text {
                 color: var(--text-color-primary);
             }
+        }
+    }
+
+    &__set-color {
+        &__pallete-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(0, 0, 0, 0.24);
+            z-index: 9999999;
+        }
+
+        &__label {
+            font-size: 1.8rem;
+            color: var(--text-color-secondary-1);
+        }
+
+        &__pallete-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 250px;
+            height: 250px;
+            border-radius: 1rem;
+            background-color: aliceblue;
+
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        &__pallete {
+            @include cursor-pointer;
         }
     }
 }

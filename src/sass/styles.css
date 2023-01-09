@@ -211,6 +211,7 @@ input {
   border-radius: 1rem;
   background-color: var(--white);
   box-shadow: rgba(169, 174, 183, 0.5) 0px 1px 2px 0px;
+  border-left: 1rem solid transparent;
 }
 .list__header {
   justify-content: space-between;
@@ -279,6 +280,7 @@ input {
 .list__tasks__item {
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
   padding: 8px 1.6rem;
   gap: 1rem;
 }
@@ -294,7 +296,6 @@ input {
   background-image: url(../../../assets/img/task-indicator.svg);
   background-size: cover;
   background-repeat: no-repeat;
-  cursor: pointer;
 }
 .list__tasks__indicator-icon:hover {
   background-image: url(../../../assets/img/checkmark.svg);
@@ -311,7 +312,6 @@ input {
   background-image: url(../../../assets/img/edit-task-icon.svg);
   background-size: cover;
   background-repeat: no-repeat;
-  cursor: pointer;
 }
 .list__task-done {
   padding: 0 1.6rem;
@@ -378,6 +378,35 @@ input {
 }
 .list__settings__item:hover .list__settings__item-text {
   color: var(--text-color-primary);
+}
+.list__set-color__pallete-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.24);
+  z-index: 9999999;
+}
+.list__set-color__label {
+  font-size: 1.8rem;
+  color: var(--text-color-secondary-1);
+}
+.list__set-color__pallete-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  border-radius: 1rem;
+  background-color: aliceblue;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.list__set-color__pallete {
+  cursor: pointer;
 }
 
 .board {
