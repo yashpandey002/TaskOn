@@ -206,12 +206,11 @@ input {
 }
 
 .list {
-  max-width: 30rem;
+  width: 30rem;
   padding: 1.6rem 0;
   border-radius: 1rem;
   background-color: var(--white);
   box-shadow: rgba(169, 174, 183, 0.5) 0px 1px 2px 0px;
-  border-left: 1rem solid transparent;
 }
 .list__header {
   justify-content: space-between;
@@ -235,6 +234,7 @@ input {
   gap: 1rem;
   margin-top: 2.4rem;
   padding: 0 1.6rem;
+  cursor: pointer;
 }
 .list__add-task__input {
   font-size: var(--size-small);
@@ -262,7 +262,6 @@ input {
   background-color: var(--primary-blue);
   background-image: url(../../../assets/img/add-white.svg);
   border: 3px solid var(--primary-blue);
-  cursor: pointer;
 }
 .list__add-task__text {
   font-size: var(--size-small);
@@ -409,13 +408,41 @@ input {
   cursor: pointer;
 }
 
+.new__list {
+  padding: 1.6rem 0;
+  border-radius: 1rem;
+}
+.new__list-box {
+  width: 30rem;
+  background-color: var(--white);
+  justify-content: center;
+  cursor: pointer;
+}
+.new__list-heading {
+  color: var(--text-color-secondary-2);
+  font-size: var(--size-small);
+}
+
 .board {
   position: relative;
+}
+.board__header {
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
 }
 .board__name {
   font-size: var(--size-large);
   color: var(--text-color-secondary-2);
   margin-bottom: 1.6rem;
+}
+.board__settings__icon {
+  height: 1.6rem;
+  width: 1.6rem;
+}
+.board__main {
+  gap: 2rem;
+  align-items: flex-start;
 }
 
 .show-settings {

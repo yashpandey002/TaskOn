@@ -75,178 +75,198 @@
         <main>
             <div class="container">
                 <div class="board">
-                    <div class="board__name">Main board</div>
-                    <div class="list">
-                        <div class="list__header flex">
-                            <div class="list__header__name-box">
-                                <div class="list__name">
-                                    Freelancing roadmap
-                                </div>
-                                <input
-                                    type="text"
-                                    class="list__name__input hide"
-                                />
-                            </div>
-                            <div class="list__header__settings-icon-box">
-                                <img
-                                    src="./assets/img/ellipsis-vertical.svg"
-                                    alt="Three vertical dots"
-                                    class="list__header__settings-icon"
-                                />
-                            </div>
+                    <div class="board__header flex">
+                        <div class="board__name-box">
+                            <div class="board__name">Main board</div>
                         </div>
-                        <div class="list__add-task flex">
-                            <input
-                                type="text"
-                                class="list__add-task__input hide"
-                                placeholder="New task"
+                        <div class="board__settings-box">
+                            <img
+                                src="./assets/img/board-settings.svg"
+                                alt="Three vertical dots representing board settings"
+                                class="board__settings__icon"
                             />
-                            <div class="list__add-task__icon-box">
-                                <div class="list__add-task__icon"></div>
-                            </div>
-                            <div class="list__add-task__text-box">
-                                <div class="list__add-task__text">
-                                    Add a task
+                        </div>
+                    </div>
+                    <div class="board__main flex">
+                        <div class="list-box">
+                            <div class="list">
+                                <div class="list__header flex">
+                                    <div class="list__header__name-box">
+                                        <div class="list__name">
+                                            Freelancing roadmap
+                                        </div>
+                                        <input
+                                            type="text"
+                                            class="list__name__input hide"
+                                        />
+                                    </div>
+                                    <div
+                                        class="list__header__settings-icon-box"
+                                    >
+                                        <img
+                                            src="./assets/img/ellipsis-vertical.svg"
+                                            alt="Three vertical dots"
+                                            class="list__header__settings-icon"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="list__add-task flex">
+                                    <input
+                                        type="text"
+                                        class="list__add-task__input hide"
+                                        placeholder="New task"
+                                    />
+                                    <div class="list__add-task__icon-box">
+                                        <div class="list__add-task__icon"></div>
+                                    </div>
+                                    <div class="list__add-task__text-box">
+                                        <div class="list__add-task__text">
+                                            Add a task
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list__tasks hide">
+                                    <ul
+                                        class="list__tasks__items-container flex"
+                                    >
+                                        <!-- <li class="list__tasks__item flex">
+                                            <div
+                                                class="list__tasks__indicator-icon-box flex"
+                                            >
+                                                <div
+                                                    class="list__tasks__indicator-icon"
+                                                ></div>
+                                            </div>
+                                            <div class="list__tasks__name">
+                                                Complete javascripts basics
+                                            </div>
+                                            <div
+                                                class="list__tasks__edit-task-icon-box hide"
+                                            ></div>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                                <!-- <div class="list__task-done">
+                                    <div class="list__task-done__header flex">
+                                        <div class="list__task-done__heading">
+                                            Completed
+                                        </div>
+                                        <div
+                                            class="list__task-done__dropdown-icon-box"
+                                        >
+                                            <img
+                                                src="./assets/img/down-arrow.svg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <ul
+                                        class="list__task-done__items-container flex"
+                                    >
+                                        <li class="list__tasks__item flex">
+                                            <div
+                                                class="list__tasks__indicator-icon-box flex"
+                                            >
+                                                <div
+                                                    class="list__tasks__indicator-icon"
+                                                ></div>
+                                            </div>
+                                            <div class="list__tasks__name">
+                                                Complete javascripts basics
+                                            </div>
+                                            <div
+                                                class="list__tasks__edit-task-icon-box hide"
+                                            ></div>
+                                        </li>
+                                        <li class="list__tasks__item flex">
+                                            <div
+                                                class="list__tasks__indicator-icon-box flex"
+                                            >
+                                                <div
+                                                    class="list__tasks__indicator-icon"
+                                                ></div>
+                                            </div>
+                                            <div class="list__tasks__name">
+                                                Complete javascripts basics
+                                            </div>
+                                            <div
+                                                class="list__tasks__edit-task-icon-box hide"
+                                            ></div>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                                <div class="list__settings flex">
+                                    <div
+                                        class="list__settings__item list__rename flex"
+                                    >
+                                        <div
+                                            class="list__settings__item__icon-box"
+                                        >
+                                            <img
+                                                src="./assets/img/pencil-outline.svg"
+                                                alt="icon of pencil showing edit"
+                                                class="list__settings__item-icon"
+                                            />
+                                        </div>
+                                        <div
+                                            class="list__settings__item__text-box"
+                                        >
+                                            <div
+                                                class="list__settings__item-text"
+                                            >
+                                                Rename list name
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="list__settings__item list__set-color flex"
+                                    >
+                                        <div
+                                            class="list__settings__item__icon-box"
+                                        >
+                                            <img
+                                                src="./assets/img/color-palette-outline.svg"
+                                                alt="icon of pencil showing edit"
+                                                class="list__settings__item-icon"
+                                            />
+                                        </div>
+                                        <div
+                                            class="list__settings__item__text-box"
+                                        >
+                                            <div
+                                                class="list__settings__item-text"
+                                            >
+                                                Set color
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list__settings__item flex">
+                                        <div
+                                            class="list__settings__item__icon-box"
+                                        >
+                                            <img
+                                                src="./assets/img/duplicate-outline.svg"
+                                                alt="icon of pencil showing edit"
+                                                class="list__settings__item-icon"
+                                            />
+                                        </div>
+                                        <div
+                                            class="list__settings__item__text-box"
+                                        >
+                                            <div
+                                                class="list__settings__item-text"
+                                            >
+                                                Duplicate list
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="list__tasks">
-                            <ul class="list__tasks__items-container flex">
-                                <li class="list__tasks__item flex">
-                                    <div
-                                        class="list__tasks__indicator-icon-box flex"
-                                    >
-                                        <div
-                                            class="list__tasks__indicator-icon"
-                                        ></div>
-                                    </div>
-                                    <div class="list__tasks__name">
-                                        Complete javascripts basics
-                                    </div>
-                                    <div
-                                        class="list__tasks__edit-task-icon-box hide"
-                                    ></div>
-                                </li>
-                                <li class="list__tasks__item flex">
-                                    <div
-                                        class="list__tasks__indicator-icon-box flex"
-                                    >
-                                        <div
-                                            class="list__tasks__indicator-icon"
-                                        ></div>
-                                    </div>
-                                    <div class="list__tasks__name">
-                                        Complete javascripts basics
-                                    </div>
-                                    <div
-                                        class="list__tasks__edit-task-icon-box hide"
-                                    ></div>
-                                </li>
-                                <li class="list__tasks__item flex">
-                                    <div
-                                        class="list__tasks__indicator-icon-box flex"
-                                    >
-                                        <div
-                                            class="list__tasks__indicator-icon"
-                                        ></div>
-                                    </div>
-                                    <div class="list__tasks__name">
-                                        Complete javascripts basics
-                                    </div>
-                                    <div
-                                        class="list__tasks__edit-task-icon-box hide"
-                                    ></div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="list__task-done">
-                            <div class="list__task-done__header flex">
-                                <div class="list__task-done__heading">
-                                    Completed
-                                </div>
-                                <div class="list__task-done__dropdown-icon-box">
-                                    <img
-                                        src="./assets/img/down-arrow.svg"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
-                            <ul class="list__task-done__items-container flex">
-                                <li class="list__tasks__item flex">
-                                    <div
-                                        class="list__tasks__indicator-icon-box flex"
-                                    >
-                                        <div
-                                            class="list__tasks__indicator-icon"
-                                        ></div>
-                                    </div>
-                                    <div class="list__tasks__name">
-                                        Complete javascripts basics
-                                    </div>
-                                    <div
-                                        class="list__tasks__edit-task-icon-box hide"
-                                    ></div>
-                                </li>
-                                <li class="list__tasks__item flex">
-                                    <div
-                                        class="list__tasks__indicator-icon-box flex"
-                                    >
-                                        <div
-                                            class="list__tasks__indicator-icon"
-                                        ></div>
-                                    </div>
-                                    <div class="list__tasks__name">
-                                        Complete javascripts basics
-                                    </div>
-                                    <div
-                                        class="list__tasks__edit-task-icon-box hide"
-                                    ></div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="list__settings flex">
-                            <div class="list__settings__item list__rename flex">
-                                <div class="list__settings__item__icon-box">
-                                    <img
-                                        src="./assets/img/pencil-outline.svg"
-                                        alt="icon of pencil showing edit"
-                                        class="list__settings__item-icon"
-                                    />
-                                </div>
-                                <div class="list__settings__item__text-box">
-                                    <div class="list__settings__item-text">
-                                        Rename list name
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="list__settings__item list__set-color flex"
-                            >
-                                <div class="list__settings__item__icon-box">
-                                    <img
-                                        src="./assets/img/color-palette-outline.svg"
-                                        alt="icon of pencil showing edit"
-                                        class="list__settings__item-icon"
-                                    />
-                                </div>
-                                <div class="list__settings__item__text-box">
-                                    <div class="list__settings__item-text">
-                                        Set color
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="list__settings__item flex">
-                                <div class="list__settings__item__icon-box">
-                                    <img
-                                        src="./assets/img/duplicate-outline.svg"
-                                        alt="icon of pencil showing edit"
-                                        class="list__settings__item-icon"
-                                    />
-                                </div>
-                                <div class="list__settings__item__text-box">
-                                    <div class="list__settings__item-text">
-                                        Duplicate list
-                                    </div>
+                        <div class="new__list-box flex">
+                            <div class="new__list">
+                                <div class="new__list-heading">
+                                    + Add new List
                                 </div>
                             </div>
                         </div>

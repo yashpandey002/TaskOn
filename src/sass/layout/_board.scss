@@ -1,9 +1,27 @@
 .board {
     position: relative;
 
+    &__header {
+        align-items: center;
+        justify-content: space-between;
+        @include cursor-pointer;
+    }
+
     &__name {
         font-size: var(--size-large);
         color: var(--text-color-secondary-2);
         margin-bottom: 1.6rem;
+    }
+
+    &__settings {
+        &__icon {
+            height: 1.6rem;
+            width: 1.6rem;
+        }
+    }
+
+    &__main {
+        gap: 2rem;
+        align-items: flex-start;
     }
 }
