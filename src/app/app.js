@@ -142,7 +142,12 @@ const addTask = function () {
 
 taskInputEl.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === 'Escape') {
-        addTask();
+        if (taskInputEl.value === '') {
+            addTaskText.classList.remove('hide');
+            taskInputEl.classList.add('hide');
+        } else {
+            addTask();
+        }
     }
 });
 
