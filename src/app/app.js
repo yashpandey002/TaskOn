@@ -103,11 +103,12 @@ const addTask = function () {
         return;
     } else {
         const listTask = document.querySelector('.list__tasks');
-        listTask.classList.remove('hide');
-
         const tasksContainer = document.querySelector(
             '.list__tasks__items-container'
         );
+        if (tasksContainer.childElementCount === 0) {
+            listTask.classList.remove('hide');
+        }
 
         const newTaskLi = document.createElement('li');
         newTaskLi.classList.add('list__tasks__item', 'flex');
@@ -129,12 +130,36 @@ const addTask = function () {
         newTaskName.textContent = taskInputEl.value;
         newTaskLi.append(newTaskName);
 
+        const newTaskRename = document.createElement('input');
+        newTaskRename.classList.add('list__tasks__rename-input', 'hide');
+        newTaskLi.append(newTaskRename);
+
         const newTaskEditIconContainer = document.createElement('div');
         newTaskEditIconContainer.classList.add(
             'list__tasks__edit-task-icon-box',
             'hide'
         );
         newTaskLi.append(newTaskEditIconContainer);
+
+        newTaskEditIconContainer.addEventListener('click', () => {
+            newTaskRename.classList.remove('hide');
+            newTaskRename.focus();
+            newTaskName.classList.add('hide');
+
+            newTaskRename.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === 'Escape') {
+                    if (newTaskRename.value === '') {
+                        return;
+                    } else {
+                        newTaskName.textContent = newTaskRename.value;
+                        newTaskRename.classList.add('hide');
+                        newTaskName.classList.remove('hide');
+                    }
+                }
+            });
+        });
+
+        taskDoneEvent(newTaskIcon, newTaskLi, newTaskEditIconContainer);
 
         taskInputEl.value = '';
     }
@@ -165,4 +190,83 @@ document.addEventListener('click', (e) => {
         taskInputEl.classList.add('hide');
         taskInputEl.value = '';
     }
+});
+
+// Task done component
+function taskDoneEvent(doneIcon, taskLi, deleteIcon) {
+    doneIcon.addEventListener('click', () => {
+        const listTask = document.querySelector('.list__tasks');
+        const tasksContainer = document.querySelector(
+            '.list__tasks__items-container'
+        );
+        const taskDone = document.querySelector('.list__task-done');
+        const taskDoneContainer = document.querySelector(
+            '.list__task-done__items-container'
+        );
+
+        if (taskDoneContainer.childElementCount === 0) {
+            taskDone.classList.remove('hide');
+        }
+        taskDoneContainer.appendChild(taskLi);
+
+        if (tasksContainer.childElementCount === 0) {
+            listTask.classList.add('hide');
+        }
+
+        compeltedTaskCount();
+        deleteIcon.addEventListener('click', () => {
+            taskDoneContainer.removeChild(taskLi);
+            compeltedTaskCount();
+            if (taskDoneContainer.childElementCount === 0) {
+                taskDone.classList.add('hide');
+            }
+        });
+        taskRestore(doneIcon, taskLi);
+    });
+}
+
+function taskRestore(icon, taskLi, deleteIcon) {
+    icon.addEventListener('click', () => {
+        const listTask = document.querySelector('.list__tasks');
+        const tasksContainer = document.querySelector(
+            '.list__tasks__items-container'
+        );
+        const taskDone = document.querySelector('.list__task-done');
+        const taskDoneContainer = document.querySelector(
+            '.list__task-done__items-container'
+        );
+
+        listTask.classList.remove('hide');
+        tasksContainer.appendChild(taskLi);
+        if (taskDoneContainer.childElementCount === 0) {
+            taskDone.classList.add('hide');
+        }
+
+        compeltedTaskCount();
+        taskDoneEvent(icon, taskLi);
+    });
+}
+
+function compeltedTaskCount() {
+    const taskDoneContainer = document.querySelector(
+        '.list__task-done__items-container'
+    );
+    const compltedTaskEl = document.querySelector('.completed__task-count');
+    compltedTaskEl.textContent = `(${taskDoneContainer.childElementCount})`;
+}
+
+const taskDoneDropDownIcon = document.querySelector(
+    '.list__task-done__dropdown-icon'
+);
+taskDoneDropDownIcon.addEventListener('click', () => {
+    const taskDoneContainer = document.querySelector(
+        '.list__task-done__items-container'
+    );
+    taskDoneDropDownIcon.classList.toggle('close');
+    if (taskDoneDropDownIcon.classList.contains('close')) {
+        taskDoneDropDownIcon.src = './assets/img/up-arrow.svg';
+    } else {
+        taskDoneDropDownIcon.src = './assets/img/down-arrow.svg';
+    }
+    taskDoneContainer.classList.toggle('hide');
 });

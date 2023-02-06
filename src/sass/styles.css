@@ -305,6 +305,9 @@ input {
   font-size: var(--size-small);
   color: var(--text-color-primary);
 }
+.list__tasks__rename-input {
+  width: 100%;
+}
 .list__tasks__edit-task-icon-box {
   height: 1.5rem;
   width: 2rem;
@@ -321,15 +324,25 @@ input {
 .list__task-done__header {
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+}
+.list__task-done__dropdown-icon {
+  cursor: pointer;
 }
 .list__task-done__items-container {
   flex-direction: column;
+  margin-top: 2rem;
 }
 .list__task-done__items-container .list__tasks__item {
   padding: 8px 0;
   box-shadow: none;
   width: 100%;
+}
+.list__task-done__items-container .list__tasks__indicator-icon {
+  background-image: url(../../../assets/img/checkmark.svg);
+  background-size: contain;
+}
+.list__task-done__items-container .list__tasks__name {
+  text-decoration: line-through;
 }
 .list__task-done__items-container .list__tasks__item:hover .list__tasks__edit-task-icon-box {
   background-image: url(../../../assets/img/restore.svg);
