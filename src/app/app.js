@@ -16,21 +16,26 @@ document.addEventListener('click', (e) => {
 });
 
 // Verical/Horizontal view
-const viewIcon = document.querySelector('.header-nav__profile-box__view-icon');
+const viewIcon = document.querySelector('.header-nav__profile-box__view-box');
 
-const changeView = function () {
+viewIcon.addEventListener('click', () => {
+    console.log(viewIcon);
     const board = document.querySelector('.board');
-    board.classList.toggle('flex');
-    board.classList.toggle('board--vertical');
-
-    const boardName = document.querySelector('.board__name');
-    boardName.classList.toggle('board__name--vertical');
-
+    const boardHeader = document.querySelector('.board__header');
+    const boardMain = document.querySelector('.board__main');
+    const listBox = document.querySelector('.list-box');
     const list = document.querySelector('.list');
-    list.classList.toggle('list--vertical');
-};
+    const newListBox = document.querySelector('.new__list-box');
+    const newList = document.querySelector('.new__list');
 
-viewIcon.addEventListener('click', changeView);
+    board.classList.toggle('board--vertical');
+    boardHeader.classList.toggle('board__header--vertical');
+    boardMain.classList.toggle('board__main--vertical');
+    listBox.classList.toggle('list-box--vertical');
+    list.classList.toggle('list--vertical');
+    newListBox.classList.toggle('new__list-box--vertical');
+    newList.classList.toggle('new__list--vertical');
+});
 
 // Show or Hide settings
 document.addEventListener('click', (e) => {
@@ -269,4 +274,13 @@ taskDoneDropDownIcon.addEventListener('click', () => {
         taskDoneDropDownIcon.src = './assets/img/down-arrow.svg';
     }
     taskDoneContainer.classList.toggle('hide');
+});
+
+// Dark Mode
+const darkModeBtn = document.querySelector(
+    '.header-nav__profile-box__dark-mode-box'
+);
+
+darkModeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
 });
