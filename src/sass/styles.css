@@ -142,7 +142,7 @@ input {
   gap: 2.4rem;
 }
 .header-nav__profile-box__dark-mode-box__icon-box {
-  border: 1px solid rgb(196, 196, 196);
+  border: 1px solid #595959;
   padding: 2px 3px;
   border-radius: 3px;
   cursor: pointer;
@@ -185,7 +185,8 @@ input {
   top: 0;
   left: 0;
   background-color: var(--white);
-  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2),
+    0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
 }
 .side-menu__content-box__logo-box {
   height: 6rem;
@@ -204,10 +205,12 @@ input {
   padding: 1.2rem 1.6rem;
   cursor: pointer;
 }
-.side-menu__content-box__board-icon, .side-menu__content-box__new-board-icon {
+.side-menu__content-box__board-icon,
+.side-menu__content-box__new-board-icon {
   height: 1.8rem;
 }
-.side-menu__content-box__board-name, .side-menu__content-box__new-board-text {
+.side-menu__content-box__board-name,
+.side-menu__content-box__new-board-text {
   font-size: var(--size-medium);
   color: var(--text-color-secondary-1);
 }
@@ -295,7 +298,8 @@ input {
   gap: 1rem;
 }
 .list__tasks__item:hover {
-  box-shadow: 0px 2px 3px rgba(136, 136, 136, 0.184), 0px -1px 3px rgba(136, 136, 136, 0.2);
+  box-shadow: 0px 2px 3px rgba(136, 136, 136, 0.184),
+    0px -1px 3px rgba(136, 136, 136, 0.2);
 }
 .list__tasks__item:hover .list__tasks__edit-task-icon-box {
   display: block;
@@ -355,7 +359,9 @@ input {
 .list__task-done__items-container .list__tasks__name {
   text-decoration: line-through;
 }
-.list__task-done__items-container .list__tasks__item:hover .list__tasks__edit-task-icon-box {
+.list__task-done__items-container
+  .list__tasks__item:hover
+  .list__tasks__edit-task-icon-box {
   background-image: url(../../../assets/img/restore.svg);
 }
 .list__settings {
@@ -363,7 +369,8 @@ input {
   gap: 1rem;
   padding: 1.6rem;
   background-color: var(--white);
-  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   position: absolute;
   top: 4rem;
