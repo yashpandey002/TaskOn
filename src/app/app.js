@@ -283,4 +283,15 @@ const darkModeBtn = document.querySelector(
 
 darkModeBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
+    let logos = document.querySelectorAll('.header-nav__logo-box__taskon-logo');
+
+    if (document.body.classList.contains('dark-mode')) {
+        logos.forEach((logo) => {
+            logo.src = './assets/img/taskon_dark.png';
+        });
+    } else {
+        logos.forEach((logo) => {
+            logo.src = './assets/img/TaskOn-logo.png';
+        });
+    }
 });
